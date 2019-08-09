@@ -66,20 +66,24 @@ class AxiosSoap {
 
     static makeRequest(url){
         this.xml=this.xmlStart+this.header+this.body+this.xmlEnd;
-        axios.post(url,
+        var data =axios.post(url,
             this.xml,
             {headers:
                     {'Content-Type': 'text/xml'}
             }).then(res=>{
-                console.log(res.data)
+
             var cleanedString = res.data.replace("\ufeff", "");
-            parseString(cleanedString, (err, result) => {
+                var finalData;
+            parseString(cleanedString,{trim: true}, (err, result) => {
                 if (err) {
                     throw (err);
                 }
-                console.log(result);
+                finalData=result;
+
             });
-        }).catch(err=>{console.log(err)});
+            return finalData
+        }).catch(err=>{return err});
+        return data
     }
 
 }
