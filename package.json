@@ -1,0 +1,15 @@
+{
+  "name": "axios-soap-api",
+  "version": "1.0.0",
+  "description": "This is JavaScript SoapClientGenerator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react-native-xml2js": "^1.0.3",
+    "xmldom": "^0.1.27"
+  },
+  "author": "Hamid Reza Karimi",
+  "license": "MIT"
+}
